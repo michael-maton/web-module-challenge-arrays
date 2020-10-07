@@ -231,9 +231,28 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
-}
+// function getRandomFlavors(arr1, arr2, arr3, arr4){
+    
+//     const rand31 = [];
+//     for (let i = 0; i < 31; i++){
+//         let chooser = Math.random();
+//         if (chooser < 0.25){
+//             rand31.push(arr1[Math.floor(Math.random() * Math.floor(arr1.length))]);
+//         }
+//         else if (chooser >= 0.25 && chooser < 0.5){
+//             rand31.push(arr2[Math.floor(Math.random() * Math.floor(arr1.length))]);
+//         }
+//         else if (chooser >= 0.5 && chooser < 0.75){
+//             rand31.push(arr3[Math.floor(Math.random() * Math.floor(arr1.length))]);
+//         }
+//         else {
+//             rand31.push(arr4[Math.floor(Math.random() * Math.floor(arr1.length))]);
+//         }
+//     }
+//     return rand31;
+// }
+
+
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
@@ -318,6 +337,33 @@ const regionalFlavors = [
 
 
 
+function getRandomFlavors(arr1, arr2, arr3, arr4){
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+    const rand31 = [];
+    for (let i = 0; i < 31; i++){
+        let chooser = Math.random();
+        if (chooser < 0.25){
+            rand31.push(arr1[getRandomInt(arr1.length)]);
+        }
+        else if (chooser >= 0.25 && chooser < 0.5){
+            rand31.push(arr2[getRandomInt(arr2.length)]);
+        }
+        else if (chooser >= 0.5 && chooser < 0.75){
+            rand31.push(arr3[getRandomInt(arr3.length)]);
+        }
+        else {
+            rand31.push(arr4[getRandomInt(arr4.length)]);
+        }
+    }
+    return rand31;
+}
+
+
+console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
+
+
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
 function foo(){
     return 'bar';
@@ -333,6 +379,6 @@ export default{
     copy,
     filterByWord,
     getAverageWordLength,
-    getRandomFlavors
+    // getRandomFlavors
 }
 
