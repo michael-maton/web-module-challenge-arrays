@@ -147,8 +147,6 @@ function removeFlavorByName(arrayTask6, removedFlavor){
     return arrayTask6;
 }
 
-
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
 Your task is to write a function that checks every item in the array for a string and returns a new array called filteredArray with only the values 
@@ -193,9 +191,31 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+// function getAverageWordLength(arrayStretch1){
+//     let numberOfWords = 0;
+//     for (let i = 0; i < arrayStretch1.length; i++){
+//         if (arrayStretch1[i].includes(" ")){
+//             numberOfWords++;
+//         }
+//     }
+//     return numberOfWords/arrayStretch1.length;
+// }
+
+// console.log(getAverageWordLength(originalFlavors));
+
+const myArray = ['word wowd', 'word', 'word sjs', 'word', 'word sds', 'word', 'word sdsd', 'word'];
+
+function getAverageWordLength(arrayStretch1){
+    let numberOfWords = 0;
+    for (let i = 0; i < arrayStretch1.length; i++){
+        numberOfWords = numberOfWords + arrayStretch1[i].split(" ").length;
+    }
+    return numberOfWords/arrayStretch1.length;
 }
+
+console.log(getAverageWordLength(myArray));
+console.log(getAverageWordLength(originalFlavors));
+
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
